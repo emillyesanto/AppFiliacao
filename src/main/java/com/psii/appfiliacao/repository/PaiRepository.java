@@ -1,5 +1,9 @@
 package com.psii.appfiliacao.repository;
 
-public interface PaiRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.psii.appfiliacao.model.Pai;
+
+public interface PaiRepository extends JpaRepository<Pai, Long>{
 
 }
