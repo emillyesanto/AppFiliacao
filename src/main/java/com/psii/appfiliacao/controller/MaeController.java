@@ -1,5 +1,10 @@
 package com.psii.appfiliacao.controller;
 
-public class MaeController {
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
+@RequestMapping("/maes")
+public class MaeController {
+    
 }
