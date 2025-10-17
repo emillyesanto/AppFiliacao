@@ -26,7 +26,7 @@ public class Filiacao {
     @JoinColumn(name = "pai_id")
     private Pai pai;
 
-    //getters e setters
+    // getters e setters
     public Long getId() {
         return id;
     }
@@ -67,8 +67,6 @@ public class Filiacao {
         this.pai = pai;
     }
 
-    //getters e setters
-    
-    
-    
+    // getters e setters
+
 }

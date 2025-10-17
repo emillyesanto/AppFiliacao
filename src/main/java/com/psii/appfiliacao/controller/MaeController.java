@@ -27,22 +27,22 @@ public class MaeController {
 
     @GetMapping
     public String listarMaes(Model model) {
-        List<Mae> maes = maeService.listarMae(); //Listar todas as mães
+        List<Mae> maes = maeService.listarMae(); // Listar todas as mães
         for (Mae mae : maes) {
             // Carregar os filhos para cada mãe
             List<Filiacao> filhos = filiacaoService.getFiliacaoByMaeId(mae.getId());
-            mae.setFiliacao(filhos); //Associar a lista de filhos à mãe
+            mae.setFiliacao(filhos); // Associar a lista de filhos à mãe
         }
-        model.addAttribute("maes", maes); //Passar as mães e seus filhos para o template
-        return "lista-maes"; //Retorna para o template de listar-maes
-    }  
+        model.addAttribute("maes", maes); // Passar as mães e seus filhos para o template
+        return "lista-maes"; // Retorna para o template de listar-maes
+    }
 
     @GetMapping("/novo")
     public String novoMae(Model model) {
         model.addAttribute("mae", new Mae());
         return "formulario_mae";
     }
-    
+
     @PostMapping
     public String salvarMae(@ModelAttribute Mae mae) {
         maeService.salvarMae(mae);

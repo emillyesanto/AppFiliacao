@@ -16,15 +16,17 @@ public class MaeService {
     public List<Mae> listarMae() {
         return maeRepository.findAll();
     }
+
     public Mae salvarMae(Mae pai) {
         return maeRepository.save(pai);
     }
+
     public Mae buscarMae(Long id) {
         return maeRepository.findById(id).orElse(null);
     }
-    public void deletarMae(Long id) {
-       maeRepository.deleteById(id);
-    }
 
+    public void deletarMae(Long id) {
+        maeRepository.deleteById(id);
+    }
 
 }
