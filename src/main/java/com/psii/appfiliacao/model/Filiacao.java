@@ -66,8 +66,6 @@ public class Filiacao {
     public void setPai(Pai pai) {
         this.pai = pai;
     }
-
-    //getters e setters
     
     
     

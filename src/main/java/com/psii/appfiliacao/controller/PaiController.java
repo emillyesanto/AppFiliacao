@@ -21,13 +21,13 @@ public class PaiController {
     public String listarPai(Model model) {
         List<Pai> pai = paiService.listarPai();
         model.addAttribute("pai", pai);
-        return "lista-pais";
+        return "lista_pais";
     }
 
     @GetMapping("/novo")
     public String novoPai(Model model) {
         model.addAttribute("pai", new Pai());
-        return "formulario_pai";
+        return "form_pai";
     }
 
     @PostMapping // ← Corrigido aqui!
@@ -40,7 +40,7 @@ public class PaiController {
     public String editarPai(@PathVariable Long id, Model model) {
         Pai pai = paiService.buscarPai(id);
         model.addAttribute("pai", pai);
-        return "formulario_pai";
+        return "form_pai";
     }
 
     @GetMapping("/{id}/deletar")

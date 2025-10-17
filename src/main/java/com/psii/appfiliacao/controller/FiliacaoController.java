@@ -17,7 +17,7 @@ import com.psii.appfiliacao.service.MaeService;
 import com.psii.appfiliacao.service.PaiService;
 
 @Controller
-@RequestMapping("/filiacoes")
+@RequestMapping("/filiacao")
 public class FiliacaoController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class FiliacaoController {
     public String listarFiliacao(Model model) {
         List<Filiacao> filiacao = filiacaoService.listarFiliacao();
         model.addAttribute("filiacao", filiacao);
-        return "lista-filiacoes";
+        return "lista_filiacoes";
     }
 
     @GetMapping("/novo")
@@ -41,13 +41,13 @@ public class FiliacaoController {
         model.addAttribute("filiacao", new Filiacao());
         model.addAttribute("mae", maeService.listarMae());
         model.addAttribute("pai", paiService.listarPai());
-        return "formulario_filiacao";
+        return "form_filiacao";
     }
 
     @PostMapping
     public String salvarFiliacao(@ModelAttribute Filiacao filiacao) {
         filiacaoService.salvarFiliacao(filiacao);
-        return "redirect:/filiacoes";
+        return "redirect:/filiacao";
     }
 
     @GetMapping("/{id}/editar")
@@ -56,12 +56,12 @@ public class FiliacaoController {
         model.addAttribute("filiacao", filiacao);
         model.addAttribute("mae", maeService.listarMae());
         model.addAttribute("pai", paiService.listarPai());
-        return "formulario_filiacao";
+        return "form_filiacao";
     }
 
     @GetMapping("/{id}/deletar")
     public String deletarConsulta(@PathVariable Long id) {
         filiacaoService.deletarFiliacao(id);
-        return "redirect:/filiacoes";
+        return "redirect:/filiacao";
     }
 }

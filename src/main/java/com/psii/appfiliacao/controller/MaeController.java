@@ -34,13 +34,13 @@ public class MaeController {
             mae.setFiliacao(filhos); //Associar a lista de filhos à mãe
         }
         model.addAttribute("maes", maes); //Passar as mães e seus filhos para o template
-        return "lista-maes"; //Retorna para o template de listar-maes
+        return "lista_maes"; //Retorna para o template de listar-maes
     }  
 
     @GetMapping("/novo")
     public String novoMae(Model model) {
         model.addAttribute("mae", new Mae());
-        return "formulario_mae";
+        return "form_mae";
     }
     
     @PostMapping
@@ -53,7 +53,7 @@ public class MaeController {
     public String editarMae(@PathVariable Long id, Model model) {
         Mae mae = maeService.buscarMae(id);
         model.addAttribute("mae", mae);
-        return "formulario_mae";
+        return "form_mae";
     }
 
     @GetMapping("/{id}/deletar")
