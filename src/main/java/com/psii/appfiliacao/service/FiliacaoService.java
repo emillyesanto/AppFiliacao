@@ -10,21 +10,25 @@ import com.psii.appfiliacao.repository.FiliacaoRepository;
 
 @Service
 public class FiliacaoService {
-@Autowired
-private FiliacaoRepository filiacaoRepository;
+    @Autowired
+    private FiliacaoRepository filiacaoRepository;
 
- public List<Filiacao> listarFiliacao() {
+    public List<Filiacao> listarFiliacao() {
         return filiacaoRepository.findAll();
     }
+
     public List<Filiacao> getFiliacaoByMaeId(Long maeId) {
         return filiacaoRepository.findByMaeId(maeId);
     }
+
     public Filiacao salvarFiliacao(Filiacao filiacao) {
         return filiacaoRepository.save(filiacao);
     }
+
     public Filiacao buscarFiliacao(Long id) {
         return filiacaoRepository.findById(id).orElse(null);
     }
+
     public void deletarFiliacao(Long id) {
         filiacaoRepository.deleteById(id);
     }

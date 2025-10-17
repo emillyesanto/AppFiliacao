@@ -18,10 +18,10 @@ public class Pai {
     private String nome;
     private String profissao;
 
-    @OneToMany(mappedBy = "pai", cascade = CascadeType.ALL) 
+    @OneToMany(mappedBy = "pai", cascade = CascadeType.ALL)
     private List<Filiacao> filiacao = new ArrayList<>();
 
-    //getters e setters
+    // getters e setters
     public Long getId() {
         return id;
     }
@@ -54,5 +54,4 @@ public class Pai {
         this.filiacao = filiacao;
     }
 
-    
 }

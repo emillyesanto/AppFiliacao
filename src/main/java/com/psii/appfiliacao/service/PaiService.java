@@ -16,15 +16,17 @@ public class PaiService {
     public List<Pai> listarPai() {
         return paiRepository.findAll();
     }
+
     public Pai salvarPai(Pai pai) {
         return paiRepository.save(pai);
     }
+
     public Pai buscarPai(Long id) {
         return paiRepository.findById(id).orElse(null);
     }
-    public void deletarPai(Long id) {
-       paiRepository.deleteById(id);
-    }
 
+    public void deletarPai(Long id) {
+        paiRepository.deleteById(id);
+    }
 
 }

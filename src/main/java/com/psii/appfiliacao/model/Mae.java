@@ -19,15 +19,15 @@ public class Mae {
     private String nome;
     private LocalDate dataNascimento;
     private String telefone;
-    
-    @OneToMany(mappedBy = "mae", cascade = CascadeType.ALL) 
+
+    @OneToMany(mappedBy = "mae", cascade = CascadeType.ALL)
     private List<Filiacao> filiacao = new ArrayList<>();
-    
-    //getters e setters
+
+    // getters e setters
     public Long getId() {
         return id;
     }
-    
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -63,5 +63,5 @@ public class Mae {
     public void setFiliacao(List<Filiacao> filiacao) {
         this.filiacao = filiacao;
     }
-    
+
 }
